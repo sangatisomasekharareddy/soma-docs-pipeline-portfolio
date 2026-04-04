@@ -7,5 +7,5 @@
 <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
 
 <script>
-  Redoc.init('openapi.yaml', {}, document.getElementById('redoc-container'));
+  Redoc.init('/soma-docs-pipeline-portfolio/openapi.yaml', {}, document.getElementById('redoc-container'));
 </script>

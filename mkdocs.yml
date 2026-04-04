@@ -1,0 +1,10 @@
+site_name: Soma Docs Portfolio
+
+nav:
+  - Home: index.md
+  - Online Help: barcode-preprocessing.md
+  - API Guide: api-cycle-count.md
+  - Release Notes: release-notes.md
+
+theme:
+  name: material

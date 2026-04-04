@@ -10,10 +10,13 @@ theme:
 
 nav:
   - Home: index.md
-  - Architecture: architecture.md
+
   - Online Help:
       - Barcode Preprocessing: barcode-preprocessing.md
-  - API Docs:
+
+  - API Documentation:
       - API Guide: api-cycle-count.md
       - API Explorer: api-explorer.md
+
   - Release Notes: release-notes.md
+  - Architecture: architecture.md

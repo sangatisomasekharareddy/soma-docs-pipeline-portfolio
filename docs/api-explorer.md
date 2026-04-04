@@ -2,5 +2,6 @@
 
 ## Interactive API Documentation
 
-<iframe src="https://petstore.swagger.io/?url=https://raw.githubusercontent.com/sangatisomasekharareddy/soma-docs-pipeline-portfolio/main/docs/openapi.yaml"
-width="100%" height="600px"></iframe>
+<redoc spec-url="openapi.yaml"></redoc>
+
+<script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>

@@ -9,7 +9,7 @@
 
 ## 🔥 Overview
 
-This project demonstrates an enterprise-grade documentation system including:
+This project demonstrates an enterprise-grade documentation system including: 
 
 - Online Help (UI documentation) 
 - REST API Documentation

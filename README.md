@@ -1,13 +1,16 @@
 
 # Soma Documentation Pipeline Portfolio
 
-This project demonstrates a documentation pipeline similar to enterprise systems.
 
-## 🔹 Features
 
-- Online Help Documentation
+## 🔥 Overview
+
+This project demonstrates an enterprise-grade documentation system including:
+
+- Online Help (UI documentation)
 - REST API Documentation
 - Release Notes
+- Automated Publishing Pipeline
 
 ## 🔹 Tech Stack
 
@@ -21,9 +24,10 @@ This project demonstrates a documentation pipeline similar to enterprise systems
 
 ## 🔹 Highlights
 
-- Structured documentation approach
-- API documentation with examples
-- Real-world enterprise use cases 
+- Structured writing approach (DITA-inspired)
+- API documentation with real payloads
+- CI/CD pipeline for documentation publishing
+- Interactive API Explorer (Swagger)
 
 ---
 

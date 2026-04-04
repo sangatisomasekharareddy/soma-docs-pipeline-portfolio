@@ -24,4 +24,4 @@ jobs:
 
       - run: mkdocs build
 
-      - run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --force --clean

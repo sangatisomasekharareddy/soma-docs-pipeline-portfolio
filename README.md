@@ -5,7 +5,7 @@ This project demonstrates a documentation pipeline similar to enterprise systems
 
 ## 🔹 Features
 
-- Online Help Documentation -
+- Online Help Documentation
 - REST API Documentation
 - Release Notes
 

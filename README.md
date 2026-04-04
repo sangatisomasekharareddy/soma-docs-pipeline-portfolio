@@ -17,7 +17,7 @@ This project demonstrates a documentation pipeline similar to enterprise systems
 
 ## 🔹 Live Site
 
-[View Documentation](https://your-username.github.io/oracle-wms-docs-pipeline-portfolio/)
+[View Documentation](https://sangatisomasekharareddy.github.io/soma-docs-pipeline-portfolio/)
 
 ## 🔹 Highlights
 

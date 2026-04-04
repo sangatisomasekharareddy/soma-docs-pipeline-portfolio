@@ -2,12 +2,13 @@ openapi: 3.0.0
 info:
   title: Cycle Count API
   version: 1.0.0
-  description: Bulk create item-driven cycle count tasks
+  description: API to create item-driven cycle count tasks
 
 paths:
   /cc_item_task/bulk_create:
     post:
       summary: Create cycle count tasks
+      description: Creates cycle count tasks for given items
       requestBody:
         required: true
         content:
@@ -24,4 +25,10 @@ paths:
                         type: integer
       responses:
         '200':
-          description: Success
+          description: Success response
+          content:
+            application/json:
+              example:
+                record_count: 3
+                success_count: 3
+                failure_count: 0

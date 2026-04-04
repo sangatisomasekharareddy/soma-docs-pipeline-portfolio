@@ -10,6 +10,7 @@ theme:
 
 nav:
   - Home: index.md
+  - Architecture: architecture.md
   - Online Help:
       - Barcode Preprocessing: barcode-preprocessing.md
   - API Docs:

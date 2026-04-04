@@ -23,7 +23,7 @@ This project demonstrates a documentation pipeline similar to enterprise systems
 
 - Structured documentation approach
 - API documentation with examples
-- Real-world enterprise use cases
+- Real-world enterprise use cases 
 
 ---
 

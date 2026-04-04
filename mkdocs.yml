@@ -1,4 +1,4 @@
-site_name: Soma Docs Portfolio
+site_name: Oracle WMS Docs Portfolio
 
 nav:
   - Home: index.md
@@ -8,3 +8,5 @@ nav:
 
 theme:
   name: material
+
+docs_dir: docs

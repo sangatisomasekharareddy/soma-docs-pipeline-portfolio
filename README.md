@@ -1,7 +1,11 @@
 
 # Soma Documentation Pipeline Portfolio
 
+# 🚀 Oracle WMS Documentation Pipeline Portfolio
 
+[![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/sangatisomasekharareddy/soma-docs-pipeline-portfolio/actions)
+[![Docs](https://img.shields.io/badge/docs-live-blue)](https://sangatisomasekharareddy.github.io/soma-docs-pipeline-portfolio/)
+[![API](https://img.shields.io/badge/API-documented-orange)](https://sangatisomasekharareddy.github.io/soma-docs-pipeline-portfolio/api-explorer/)
 
 ## 🔥 Overview
 

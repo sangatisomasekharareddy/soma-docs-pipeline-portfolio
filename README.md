@@ -12,7 +12,7 @@ This project demonstrates a documentation pipeline similar to enterprise systems
 ## 🔹 Tech Stack
 
 - MkDocs
-- GitHub Actions
+- GitHub Actions 
 - GitHub Pages
 
 ## 🔹 Live Site

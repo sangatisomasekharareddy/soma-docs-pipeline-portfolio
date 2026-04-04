@@ -7,7 +7,7 @@
 
 This project demonstrates an enterprise-grade documentation system including:
 
-- Online Help (UI documentation)
+- Online Help (UI documentation) 
 - REST API Documentation
 - Release Notes
 - Automated Publishing Pipeline

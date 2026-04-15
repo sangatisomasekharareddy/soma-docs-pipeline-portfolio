@@ -9,29 +9,33 @@ Note:
 
 - Rules can be configured only in Redwood UI format.
 - Rules are user group-specific. 
-
+  
 ---
 
 ## Processing Flow
 
-1. Match scanned barcode against rules (sequence order)
-2. Apply update logic
-3. Stop further evaluation
-4. Pass updated barcode for processing
+When a barcode is scanned, the system processes it in the following order: 
+1. Match the scanned barcode against configured preprocessing rules (by sequence). 
+2. Apply the corresponding update logic (if matched). 
+3. Stop further rule evaluation. 
+4. Pass the updated barcode for downstream processing.
 
 ---
 
 ## Key Capabilities
 
-- Standardize barcode formats
-- Extract or restructure barcode segments
-- Validate barcode input in real time
-- Reject invalid barcodes
-- Adapt to new formats without code changes :contentReference[oaicite:1]{index=1}
+Use barcode preprocessing rules to: 
+- Standardize barcode formats across suppliers. 
+- Extract or restructure barcode segments from the scanned barcode. 
+- Validate barcode input in real time.  
+- Reject invalid barcodes before they disrupt operations, reducing manual intervention and errors.  
+- Adapt to new barcode formats without code changes.
 
 ---
 
 ## Match Functions
+
+
 
 | Function       | Description |
 |---------------|------------|

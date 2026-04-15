@@ -1,7 +1,8 @@
 # Configuring Barcode Preprocessing Rules
 
 ## Overview
-In warehouse operations, a wide range of SKUs and suppliers results in barcodes of various formats, structures, and qualifiers. Not all scanned barcodes arrive in a format that matches your Warehouse Management System (WMS) requirements. These variations can lead to inconsistencies during scanning and downstream processing. 
+In warehouse operations, a wide range of SKUs and suppliers results in barcodes of various formats, structures, and qualifiers. Not all scanned barcodes arrive in a format that matches your Warehouse Management System (WMS) requirements. These variations can lead to inconsistencies during scanning and downstream processing.
+
 The **Barcode Preprocessing (BarcodePreProcView)** UI allows you to configure rules for preprocessing scanned barcodes. You can define barcode matching conditions and specify logic used to transform barcode values. When a scanned barcode meets the defined criteria, the system applies the configured preprocessing rules and updates the barcode before further processing. 
 
 Note: 

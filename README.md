@@ -37,4 +37,4 @@ This project demonstrates an enterprise-grade documentation system including:
 
 ## 👨‍💻 Author
 
-Technical Writer with 7.5+ years experience in Technical Writing.
+Technical Writer with 8 years experience in Technical Writing.

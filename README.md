@@ -39,3 +39,6 @@ This project demonstrates an enterprise-grade documentation system including:
 
 Technical Writer with 8 years experience in Technical Writing.
 
+| Left Align | Center Align | Right Align |
+| :--- | :----: | ---: |
+| Text | Text | Text |

@@ -34,6 +34,8 @@ Basic Authentication (username and password).
 | `company_id__code` | String | *Conditional* | Company context by code. |
 
 > **Note:**
+>
+> 
 > * Provide either `facility_id` or `facility_id__code`.
 > * Provide either `company_id` or `company_id__code`.
 

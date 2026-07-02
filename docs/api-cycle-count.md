@@ -70,7 +70,6 @@ Basic Authentication (username and password).
 ```
 ---
 
-
 ## Sample Success Response (200 OK) 
 The system returns the successful and failed task creation count.
 
@@ -82,7 +81,7 @@ The system returns the successful and failed task creation count.
     "data": null, 
     "details": null 
 }
-
+```
 ---
 
 ## Error Codes
@@ -108,5 +107,5 @@ If a specific item in the list fails, the details array identifies the specific 
     } 
   ] 
 } 
-
+```
 

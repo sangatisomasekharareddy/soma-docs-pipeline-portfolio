@@ -5,29 +5,27 @@ In warehouse operations, a wide range of SKUs and suppliers results in barcodes 
 
 The **Barcode Preprocessing (`BarcodePreProcView`)** UI allows you to configure rules for preprocessing scanned barcodes. You can define barcode matching conditions and specify the logic used to transform barcode values. When a scanned barcode meets the defined criteria, the system applies the configured preprocessing rules and updates the barcode before further processing. 
 
-> **Note:**
-> * Rules can be configured **only** in the Redwood UI format. 
-> * Rules are user group-specific. 
+> **Note:** Rules can be configured **only** in the Redwood UI format and are user group-specific. 
 
 ---
 
 ## Processing Flow 
 When a barcode is scanned, the system processes it in the following sequential order: 
 
-1. **Match** the scanned barcode against configured preprocessing rules (ordered by sequence). 
-2. **Apply** the corresponding update logic (if a match is found). 
-3. **Stop** further rule evaluation immediately upon matching. 
-4. **Pass** the updated barcode to downstream processing.
+1. Match the scanned barcode against configured preprocessing rules (ordered by sequence). 
+2. Apply the corresponding update logic (if a match is found). 
+3. Stop further rule evaluation immediately upon matching. 
+4. Pass the updated barcode to downstream processing.
 
 ---
 
 ## Key Capabilities 
 Use barcode preprocessing rules to: 
-* Standardize barcode formats across different suppliers. 
-* Extract or restructure specific barcode segments from the scanned input. 
-* Validate barcode inputs in real time.  
-* Reject invalid barcodes before they disrupt operations, reducing manual intervention and errors.  
-* Adapt to new barcode formats dynamically without demanding code changes. 
+- Standardize barcode formats across different suppliers. 
+- Extract or restructure specific barcode segments from the scanned input. 
+- Validate barcode inputs in real time.  
+- Reject invalid barcodes before they disrupt operations, reducing manual intervention and errors.  
+- Adapt to new barcode formats dynamically without demanding code changes. 
 
 ---
 

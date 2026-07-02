@@ -42,19 +42,19 @@ In the Barcode Preprocessing UI, you can set criteria determining when to prepro
    * **Prefix Text:** Specifies the starting text used to identify matching barcodes. 
    * **Match Function:** Determines how the system evaluates the barcode. You can select one of the following functions:
 
-    | Match Function | Behavior |
-    | :--- | :--- |
-    | **Min Length** | Matches if the scanned barcode meets the minimum length. On selection, enter the minimum length value. |
-    | **Exact Length** | Matches if the scanned barcode is of the exact specified length. On selection, enter the exact length value. |
-    | **Begins With** | Matches if the scanned barcode starts with the configured text. On selection, enter the string to match with the barcode's beginning. |
-    | **Contains** | Matches if the scanned barcode contains a specific string. On selection, enter the text pattern to match. |
-    | **Regex Match** | Matches if the scanned barcode fits the provided regular expression. On selection, enter a regular expression in the `regex` field. |
+      | Match Function | Behavior |
+      | :--- | :--- |
+      | **Min Length** | Matches if the scanned barcode meets the minimum length. On selection, enter the minimum length value. |
+      | **Exact Length** | Matches if the scanned barcode is of the exact specified length. On selection, enter the exact length value. |
+      | **Begins With** | Matches if the scanned barcode starts with the configured text. On selection, enter the string to match with the barcode's beginning. |
+      | **Contains** | Matches if the scanned barcode contains a specific string. On selection, enter the text pattern to match. |
+      | **Regex Match** | Matches if the scanned barcode fits the provided regular expression. On selection, enter a regular expression in the `regex` field. |
 
-    > **Note:** All text entries are case-sensitive. 
+      > **Note:** All text entries are case-sensitive. 
 
-  * **Reject Barcode toggle:** When enabled, the system rejects the matching scanned barcode and displays an error during scanning. Enable this toggle to block invalid barcodes. 
+    * **Reject Barcode toggle:** When enabled, the system rejects the matching scanned barcode and displays an error during scanning. Enable this toggle to block invalid barcodes. 
 
-> **Note:** Either **Sequence Nbr** or **Match Function** is mandatory for each barcode preprocessing rule. You can also configure both fields simultaneously. 
+  > **Note:** Either **Sequence Nbr** or **Match Function** is mandatory for each barcode preprocessing rule. You can also configure both fields simultaneously. 
 
 4. Click **Save**. 
 

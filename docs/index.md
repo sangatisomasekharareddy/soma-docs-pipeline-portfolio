@@ -6,7 +6,7 @@ Welcome to my technical writing portfolio.
 
 This project demonstrates enterprise-level documentation including:
 
-- UI Help Documentation
+- Online Help Documentation
 - REST API Documentation
 - Release Notes
 
@@ -14,14 +14,14 @@ This project demonstrates enterprise-level documentation including:
 
 ## 📚 Modules
 
-### 📦 Barcode Preprocessing
+### 📦 Online Help
 Configure rules to standardize barcode inputs.
 
-### 🔗 Cycle Count API
+### 🔗 API Documentation
 Bulk create cycle count tasks using REST APIs.
 
 ### 🆕 Release Notes
-Track product enhancements and features.
+Product release enhancements and features.
 
 ---
 
@@ -38,5 +38,6 @@ This site is automatically built and deployed using:
 ## 💡 Key Highlights
 
 - Structured documentation (DITA-style thinking)
-- Real-world enterprise use cases
-- Automated publishing pipeline
+- What's New Release Notes
+- API documentation with real payloads
+- CI/CD pipeline for documentation publishing

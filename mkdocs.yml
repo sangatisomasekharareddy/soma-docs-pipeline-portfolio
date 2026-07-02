@@ -16,7 +16,6 @@ nav:
 
   - API Documentation:
       - API Guide: api-cycle-count.md
-      - API Explorer: api-explorer.md
 
   - Release Notes: release-notes.md
   - Architecture: architecture.md

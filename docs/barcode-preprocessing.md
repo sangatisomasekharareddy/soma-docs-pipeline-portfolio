@@ -97,7 +97,7 @@ You can create multiple updates with different sequence numbers.
 ### Example 1: Extract Substring 
 Extract a portion from the scanned barcode. 
 
-* **Input Barcode:** `ARTSSKU1234567` 
+**Input Barcode:** `ARTSSKU1234567` 
 
 #### Barcode Preprocessing Rule
 | Group | Sequence Nbr | Prefix Text | Reject Barcode | Match Function | Parameters |
@@ -112,7 +112,7 @@ The system matches the scanned barcode `ARTSSKU1234567` based on the prefix and 
 | Company/Facility/1 | 1 | `substring` | `startindex = 4`, `endindex = 10` |
 
 The update rule extracts characters from position 4 to 9. 
-* **Final Output after updates:** `SKU123` 
+**Final Output after updates:** `SKU123` 
 
 ---
 
@@ -156,7 +156,8 @@ The barcode updates sequentially:
 1. **Sequence 1:** Removes all occurrences of "SN", turning the string into `SKULPN12345`. 
 2. **Sequence 2:** Extracts the first 8 characters from that result (`startindex = 0` to `endindex = 8`). 
 
-* **Final Output after updates:** `SKULPN12`
+* **Input barcode:** `SKUSNPLN12345`
+* **Final barcode after updates:** `SKULPN12`
 
 ---
 

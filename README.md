@@ -5,13 +5,13 @@
 
 [![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/sangatisomasekharareddy/soma-docs-pipeline-portfolio/actions)
 [![Docs](https://img.shields.io/badge/docs-live-blue)](https://sangatisomasekharareddy.github.io/soma-docs-pipeline-portfolio/)
-[![API](https://img.shields.io/badge/API-documented-orange)](https://sangatisomasekharareddy.github.io/soma-docs-pipeline-portfolio/api-explorer/)
+
 
 ## 🔥 Overview
 
 This project demonstrates an enterprise-grade documentation system including: 
 
-- Online Help (UI documentation)
+- Online Help
 - REST API Documentation 
 - Release Notes
 - Automated Publishing Pipeline
@@ -29,9 +29,10 @@ This project demonstrates an enterprise-grade documentation system including:
 ## 🔹 Highlights
 
 - Structured writing approach (DITA-inspired)
+- What's New Release Notes
 - API documentation with real payloads
 - CI/CD pipeline for documentation publishing
-- Interactive API Explorer (Swagger)
+
 
 ---
 

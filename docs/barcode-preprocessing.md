@@ -36,7 +36,8 @@ In the Barcode Preprocessing UI, you can set criteria determining when to prepro
 
 1. Navigate to the **Barcode Preprocessing UI**. 
 2. Click **Create**. 
-3. On the Create form, enter or select the following fields/toggles as required: 
+3. On the Create form, enter or select the following fields/toggles as required:
+   
    * **Sequence Nbr:** Defines the order in which barcode preprocessing rules are evaluated. 
    * **Prefix Text:** Specifies the starting text used to identify matching barcodes. 
    * **Match Function:** Determines how the system evaluates the barcode. You can select one of the following functions:
@@ -55,7 +56,7 @@ In the Barcode Preprocessing UI, you can set criteria determining when to prepro
 
     > **Note:** Either **Sequence Nbr** or **Match Function** is mandatory for each barcode preprocessing rule. You can also configure both fields simultaneously. 
 
-4. Click **Save**. 
+5. Click **Save**. 
 
 You can create multiple rules with different sequence numbers.
 The system matches the scanned barcodes against barcode preprocessing rules in sequence. Once the scanned barcode matches a rule, any associated update logic is executed and no further rules are evaluated. 
@@ -68,12 +69,15 @@ Barcode Preprocessing Update rules for a matching sequence define how the barcod
 In the **Barcode Preprocessing Updates** screen, you can configure the actual logic used to transform the scanned barcodes. 
 
 To define how a matched barcode should be updated: 
+
 1. In the Barcode Preprocessing UI, select an existing barcode preprocessing rule. 
 2. Click **More Actions** > **Barcode Preprocessing Updates**. 
 3. Click **Create**. 
-4. On the Create form, enter or select the following fields: 
+4. On the Create form, enter or select the following fields:
+   
    * **Sequence Nbr:** Determines the update execution order. 
    * **Update Function:** Logic used to transform the scanned barcode. You can select from the following choices: 
+
 
       | Update Function | Behavior | Example |
       | :--- | :--- | :--- |
@@ -82,6 +86,7 @@ To define how a matched barcode should be updated:
       | **Strip Regex** | Removes parts of the scanned barcode using regex. Enter a regular expression in the `regex` field to strip matching portions. Standard regex patterns apply. | **Scanned Barcode:** `ARTSKU123456`<br>**Regex:** `^(.{3})`<br>**Result:** `SKU123456` (first three characters removed) |
       | **Insert At** | Inserts a string at a specified position. Enter the `Position` (0-indexed) and the `String to insert`. If the position exceeds the length, it appends to the last character's position. | **Scanned Barcode:** `ART12345`<br>**Position:** 3<br>**String to insert:** `SKU`<br>**Result:** `ARTSKU12345` |
       | **Regex Replace** | Performs advanced transformations using regex groups. Enter a regular expression in the `regex` field. *Useful for constructing multi-field barcodes.* | **Scanned Barcode:** `SSBPLPN2201`<br>**Regex:** `^SSBP(.{7})`<br>**String to replace:** `SSMFB[A]$1!`<br>**Result:** `SSMFB[A]LPN2201!` |
+
 
 5. Click **Save**. 
 

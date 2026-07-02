@@ -38,10 +38,9 @@ In the Barcode Preprocessing UI, you can set criteria determining when to prepro
 2. Click **Create**. 
 3. On the Create form, enter or select the following fields/toggles as required:
 
-   
-   * **Sequence Nbr:** Defines the order in which barcode preprocessing rules are evaluated. 
-   * **Prefix Text:** Specifies the starting text used to identify matching barcodes. 
-   * **Match Function:** Determines how the system evaluates the barcode. You can select one of the following functions:
+      * **Sequence Nbr:** Defines the order in which barcode preprocessing rules are evaluated. 
+      * **Prefix Text:** Specifies the starting text used to identify matching barcodes. 
+      * **Match Function:** Determines how the system evaluates the barcode. You can select one of the following functions:
 
 
       | Match Function | Behavior |
@@ -54,7 +53,7 @@ In the Barcode Preprocessing UI, you can set criteria determining when to prepro
 
       > **Note:** All text entries are case-sensitive. 
 
-    * **Reject Barcode toggle:** When enabled, the system rejects the matching scanned barcode and displays an error during scanning. Enable this toggle to block invalid barcodes. 
+       * **Reject Barcode toggle:** When enabled, the system rejects the matching scanned barcode and displays an error during scanning. Enable this toggle to block invalid barcodes. 
 
     > **Note:** Either **Sequence Nbr** or **Match Function** is mandatory for each barcode preprocessing rule. You can also configure both fields simultaneously. 
 
@@ -78,8 +77,8 @@ To define how a matched barcode should be updated:
 4. On the Create form, enter or select the following fields:
 
    
-   * **Sequence Nbr:** Determines the update execution order. 
-   * **Update Function:** Logic used to transform the scanned barcode. You can select from the following choices: 
+      * **Sequence Nbr:** Determines the update execution order. 
+      * **Update Function:** Logic used to transform the scanned barcode. You can select from the following choices: 
 
 
       | Update Function | Behavior | Example |

@@ -43,13 +43,13 @@ In the Barcode Preprocessing UI, you can set criteria determining when to prepro
       * **Match Function:** Determines how the system evaluates the barcode. You can select one of the following functions:
 
 
-      | Match Function | Behavior |
-      | :--- | :--- |
-      | **Min Length** | Matches if the scanned barcode meets the minimum length. On selection, enter the minimum length value. |
-      | **Exact Length** | Matches if the scanned barcode is of the exact specified length. On selection, enter the exact length value. |
-      | **Begins With** | Matches if the scanned barcode starts with the configured text. On selection, enter the string to match with the barcode's beginning. |
-      | **Contains** | Matches if the scanned barcode contains a specific string. On selection, enter the text pattern to match. |
-      | **Regex Match** | Matches if the scanned barcode fits the provided regular expression. On selection, enter a regular expression in the `regex` field. |
+           | Match Function | Behavior |
+           | :--- | :--- |
+           | **Min Length** | Matches if the scanned barcode meets the minimum length. On selection, enter the minimum length value. |
+           | **Exact Length** | Matches if the scanned barcode is of the exact specified length. On selection, enter the exact length value. |
+           | **Begins With** | Matches if the scanned barcode starts with the configured text. On selection, enter the string to match with the barcode's beginning. |
+           | **Contains** | Matches if the scanned barcode contains a specific string. On selection, enter the text pattern to match. |
+           | **Regex Match** | Matches if the scanned barcode fits the provided regular expression. On selection, enter a regular expression in the `regex` field. |
 
       > **Note:** All text entries are case-sensitive. 
 
@@ -60,7 +60,11 @@ In the Barcode Preprocessing UI, you can set criteria determining when to prepro
 4. Click **Save**. 
 
 You can create multiple rules with different sequence numbers.
+
+
 The system matches the scanned barcodes against barcode preprocessing rules in sequence. Once the scanned barcode matches a rule, any associated update logic is executed and no further rules are evaluated. 
+
+
 Barcode Preprocessing Update rules for a matching sequence define how the barcode is to be updated or handled next. 
 
 ---
@@ -81,13 +85,13 @@ To define how a matched barcode should be updated:
       * **Update Function:** Logic used to transform the scanned barcode. You can select from the following choices: 
 
 
-      | Update Function | Behavior | Example |
-      | :--- | :--- | :--- |
-      | **Substring** | Extracts a portion of the barcode. Enter `startindex` (inclusive) and `endindex` (exclusive) values.<br><br>*Note: Index value starts with 0. If the provided end index is greater than the last index, the system captures up to the final character.* | **Scanned Barcode:** `ARTSKU1234567`<br>**Startindex:** 3<br>**Endindex:** 9<br>**Result:** `SKU123` (from 3rd to 8th character) |
-      | **Strip String** | Removes all occurrences of a specified string. Enter the exact string value to remove. | **Scanned Barcode:** `ARTSSKUARTS123`<br>**Strip String:** `ARTS`<br>**Result:** `SKU123` |
-      | **Strip Regex** | Removes parts of the scanned barcode using regex. Enter a regular expression in the `regex` field to strip matching portions. Standard regex patterns apply. | **Scanned Barcode:** `ARTSKU123456`<br>**Regex:** `^(.{3})`<br>**Result:** `SKU123456` (first three characters removed) |
-      | **Insert At** | Inserts a string at a specified position. Enter the `Position` (0-indexed) and the `String to insert`. If the position exceeds the length, it appends to the last character's position. | **Scanned Barcode:** `ART12345`<br>**Position:** 3<br>**String to insert:** `SKU`<br>**Result:** `ARTSKU12345` |
-      | **Regex Replace** | Performs advanced transformations using regex groups. Enter a regular expression in the `regex` field. *Useful for constructing multi-field barcodes.* | **Scanned Barcode:** `SSBPLPN2201`<br>**Regex:** `^SSBP(.{7})`<br>**String to replace:** `SSMFB[A]$1!`<br>**Result:** `SSMFB[A]LPN2201!` |
+           | Update Function | Behavior | Example |
+           | :--- | :--- | :--- |
+           | **Substring** | Extracts a portion of the barcode. Enter `startindex` (inclusive) and `endindex` (exclusive) values.<br><br>*Note: Index value starts with 0. If the provided end index is greater than the last index, the system captures up to the final character.* | **Scanned Barcode:** `ARTSKU1234567`<br>**Startindex:** 3<br>**Endindex:** 9<br>**Result:** `SKU123` (from 3rd to 8th character) |
+           | **Strip String** | Removes all occurrences of a specified string. Enter the exact string value to remove. | **Scanned Barcode:** `ARTSSKUARTS123`<br>**Strip String:** `ARTS`<br>**Result:** `SKU123` |
+           | **Strip Regex** | Removes parts of the scanned barcode using regex. Enter a regular expression in the `regex` field to strip matching portions. Standard regex patterns apply. | **Scanned Barcode:** `ARTSKU123456`<br>**Regex:** `^(.{3})`<br>**Result:** `SKU123456` (first three characters removed) |
+           | **Insert At** | Inserts a string at a specified position. Enter the `Position` (0-indexed) and the `String to insert`. If the position exceeds the length, it appends to the last character's position. | **Scanned Barcode:** `ART12345`<br>**Position:** 3<br>**String to insert:** `SKU`<br>**Result:** `ARTSKU12345` |
+           | **Regex Replace** | Performs advanced transformations using regex groups. Enter a regular expression in the `regex` field. *Useful for constructing multi-field barcodes.* | **Scanned Barcode:** `SSBPLPN2201`<br>**Regex:** `^SSBP(.{7})`<br>**String to replace:** `SSMFB[A]$1!`<br>**Result:** `SSMFB[A]LPN2201!` |
 
 
 5. Click **Save**. 

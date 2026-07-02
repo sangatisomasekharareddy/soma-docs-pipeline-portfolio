@@ -112,6 +112,8 @@ The system matches the scanned barcode `ARTSSKU1234567` based on the prefix and 
 | Company/Facility/1 | 1 | `substring` | `startindex = 4`, `endindex = 10` |
 
 The update rule extracts characters from position 4 to 9. 
+
+
 **Final Output after updates:** `SKU123` 
 
 ---

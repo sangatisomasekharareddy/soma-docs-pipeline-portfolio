@@ -1,6 +1,3 @@
-
-
-```markdown
 # What's New
 
 ## Introduce JSON Input Interfaces for UOM and UOM Literals

@@ -37,10 +37,12 @@ In the Barcode Preprocessing UI, you can set criteria determining when to prepro
 1. Navigate to the **Barcode Preprocessing UI**. 
 2. Click **Create**. 
 3. On the Create form, enter or select the following fields/toggles as required:
+
    
    * **Sequence Nbr:** Defines the order in which barcode preprocessing rules are evaluated. 
    * **Prefix Text:** Specifies the starting text used to identify matching barcodes. 
    * **Match Function:** Determines how the system evaluates the barcode. You can select one of the following functions:
+
 
       | Match Function | Behavior |
       | :--- | :--- |
@@ -56,7 +58,7 @@ In the Barcode Preprocessing UI, you can set criteria determining when to prepro
 
     > **Note:** Either **Sequence Nbr** or **Match Function** is mandatory for each barcode preprocessing rule. You can also configure both fields simultaneously. 
 
-5. Click **Save**. 
+4. Click **Save**. 
 
 You can create multiple rules with different sequence numbers.
 The system matches the scanned barcodes against barcode preprocessing rules in sequence. Once the scanned barcode matches a rule, any associated update logic is executed and no further rules are evaluated. 
@@ -74,6 +76,7 @@ To define how a matched barcode should be updated:
 2. Click **More Actions** > **Barcode Preprocessing Updates**. 
 3. Click **Create**. 
 4. On the Create form, enter or select the following fields:
+
    
    * **Sequence Nbr:** Determines the update execution order. 
    * **Update Function:** Logic used to transform the scanned barcode. You can select from the following choices: 

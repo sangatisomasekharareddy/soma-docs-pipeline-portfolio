@@ -16,7 +16,7 @@ Use this interface to create new UOMs.
 ### UOM Literals Input Interface
 Use this interface to create localized terminology (literals) for existing UOMs. It supports multiple languages (e.g., English, Chinese, Spanish, French, Korean).
 
-* **API URL:** `POST .../wms/lgfapi/v10/stage/uom_terminology`
+**API URL:** `POST .../wms/lgfapi/v10/stage/uom_terminology`
 
 > **Note:** For detailed API documentation and sample payloads, refer to the *WMS REST API Guide*.
 
@@ -26,9 +26,9 @@ Use this interface to create localized terminology (literals) for existing UOMs.
 ## Display Additional Item Property during Mobile Transactions 
 You can now display additional item properties during **Receive Single SKU** and **Sort and Receive** mobile transactions. This enhancement provides additional information to identify scanned items, which helps you with the following: 
 
-* **Speeds up item identification** during receiving. 
-* **Reduces reliance** on primary item codes. 
-* **Improves accuracy** in high-volume operations. 
+* Speeds up item identification during receiving. 
+* Reduces reliance on primary item codes. 
+* Improves accuracy in high-volume operations. 
 
 
 ### New Screen Parameter 
@@ -39,18 +39,18 @@ The following table details the screen parameter behavior:
 
 | Screen Parameter Choice | Behavior |
 | :--- | :--- |
-| **None or Blank** | *Default:* The system does not display an additional item property. |
-| **Item Code** | When an item is scanned, the system displays the selected item property. |
-| **Item Alternate Code** | When an item is scanned, the system displays the selected item property. |
-| **Item Part A** | When an item is scanned, the system displays the selected item property. |
-| **Item External Style** | When an item is scanned, the system displays the selected item property. |
-| **Item Description** | When an item is scanned, the system displays the selected item property. |
-| **Item Facility Description** | When an item is scanned, the system displays the selected item property. |
-| **Item Short Description** | When an item is scanned, the system displays the selected item property. |
-| **Item Description 2** | When an item is scanned, the system displays the selected item property. |
-| **Season Code** | When an item is scanned, the system displays the selected item property. |
-| **Item Description 3** | When an item is scanned, the system displays the selected item property. |
-| **Item Barcode** | When an item is scanned, the system displays the selected item property. |
+| None or Blank | *Default:* The system does not display an additional item property. |
+| Item Code | When an item is scanned, the system displays the selected item property. |
+| Item Alternate Code | When an item is scanned, the system displays the selected item property. |
+| Item Part A | When an item is scanned, the system displays the selected item property. |
+| Item External Style | When an item is scanned, the system displays the selected item property. |
+| Item Description | When an item is scanned, the system displays the selected item property. |
+| Item Facility Description | When an item is scanned, the system displays the selected item property. |
+| Item Short Description | When an item is scanned, the system displays the selected item property. |
+| Item Description 2 | When an item is scanned, the system displays the selected item property. |
+| Season Code | When an item is scanned, the system displays the selected item property. |
+| Item Description 3 | When an item is scanned, the system displays the selected item property. |
+| Item Barcode | When an item is scanned, the system displays the selected item property. |
 
 
 ### Important Considerations 

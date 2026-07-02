@@ -1,0 +1,1557 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../api-cycle-count/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Barcode Preprocessing - Soma Docs Portfolio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuring-barcode-preprocessing-rules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Soma Docs Portfolio" class="md-header__button md-logo" aria-label="Soma Docs Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Soma Docs Portfolio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Barcode Preprocessing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Online Help
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api-cycle-count/" class="md-tabs__link">
+          
+  
+  
+  API Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../release-notes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Release Notes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Soma Docs Portfolio" class="md-nav__button md-logo" aria-label="Soma Docs Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Soma Docs Portfolio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Online Help
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Online Help
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Barcode Preprocessing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Barcode Preprocessing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-barcode-preprocessing-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Barcode Preprocessing Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-barcode-preprocessing-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Barcode Preprocessing Updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-extract-substring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Extract Substring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1: Extract Substring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-update-for-sequence-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Update (for Sequence 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-reject-invalid-barcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Reject Invalid Barcode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2: Reject Invalid Barcode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-rule_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-multi-step-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Multi-Step Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3: Multi-Step Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-update-for-sequence-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Update (for Sequence 5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-conditional-extraction-based-on-supplier-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Conditional Extraction Based on Supplier Prefix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 4: Conditional Extraction Based on Supplier Prefix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-rules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-update-for-sequence-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Update (for Sequence 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-update-for-sequence-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Update (for Sequence 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-cycle-count/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-barcode-preprocessing-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Barcode Preprocessing Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-barcode-preprocessing-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Barcode Preprocessing Updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-extract-substring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Extract Substring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1: Extract Substring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-update-for-sequence-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Update (for Sequence 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-reject-invalid-barcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Reject Invalid Barcode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2: Reject Invalid Barcode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-rule_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-multi-step-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Multi-Step Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3: Multi-Step Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-update-for-sequence-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Update (for Sequence 5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-conditional-extraction-based-on-supplier-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Conditional Extraction Based on Supplier Prefix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 4: Conditional Extraction Based on Supplier Prefix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-rules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-update-for-sequence-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Update (for Sequence 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barcode-preprocessing-update-for-sequence-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barcode Preprocessing Update (for Sequence 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="configuring-barcode-preprocessing-rules">Configuring Barcode Preprocessing Rules</h1>
+<h2 id="overview">Overview</h2>
+<p>In warehouse operations, a wide range of SKUs and suppliers results in barcodes of various formats, structures, and qualifiers. Not all scanned barcodes arrive in a format that matches your Warehouse Management System (WMS) requirements, leading to inconsistencies during scanning and downstream processing. </p>
+<p>The <strong>Barcode Preprocessing (<code>BarcodePreProcView</code>)</strong> UI allows you to configure rules for preprocessing scanned barcodes. You can define barcode matching conditions and specify the logic used to transform barcode values. When a scanned barcode meets the defined criteria, the system applies the configured preprocessing rules and updates the barcode before further processing. </p>
+<blockquote>
+<p><strong>Note:</strong> Rules can be configured <strong>only</strong> in the Redwood UI format and are user group-specific. </p>
+</blockquote>
+<hr />
+<h2 id="processing-flow">Processing Flow</h2>
+<p>When a barcode is scanned, the system processes it in the following sequential order: </p>
+<ol>
+<li>Match the scanned barcode against configured preprocessing rules (ordered by sequence). </li>
+<li>Apply the corresponding update logic (if a match is found). </li>
+<li>Stop further rule evaluation immediately upon matching. </li>
+<li>Pass the updated barcode to downstream processing.</li>
+</ol>
+<hr />
+<h2 id="key-capabilities">Key Capabilities</h2>
+<p>Use barcode preprocessing rules to: </p>
+<ul>
+<li>Standardize barcode formats across different suppliers. </li>
+<li>Extract or restructure specific barcode segments from the scanned input. </li>
+<li>Validate barcode inputs in real time.  </li>
+<li>Reject invalid barcodes before they disrupt operations, reducing manual intervention and errors.  </li>
+<li>Adapt to new barcode formats dynamically without demanding code changes. </li>
+</ul>
+<hr />
+<h2 id="configure-barcode-preprocessing-rules">Configure Barcode Preprocessing Rules</h2>
+<p>In the Barcode Preprocessing UI, you can set criteria determining when to preprocess scanned barcodes. Follow these steps to configure the rules: </p>
+<ol>
+<li>Navigate to the <strong>Barcode Preprocessing UI</strong>. </li>
+<li>Click <strong>Create</strong>. </li>
+<li>
+<p>On the Create form, enter or select the following fields/toggles as required:</p>
+<ul>
+<li><strong>Sequence Nbr:</strong> Defines the order in which barcode preprocessing rules are evaluated. </li>
+<li><strong>Prefix Text:</strong> Specifies the starting text used to identify matching barcodes. </li>
+<li>
+<p><strong>Match Function:</strong> Determines how the system evaluates the barcode. You can select one of the following functions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Match Function</th>
+<th style="text-align: left;">Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Min Length</strong></td>
+<td style="text-align: left;">Matches if the scanned barcode meets the minimum length. On selection, enter the minimum length value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Exact Length</strong></td>
+<td style="text-align: left;">Matches if the scanned barcode is of the exact specified length. On selection, enter the exact length value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Begins With</strong></td>
+<td style="text-align: left;">Matches if the scanned barcode starts with the configured text. On selection, enter the string to match with the barcode's beginning.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Contains</strong></td>
+<td style="text-align: left;">Matches if the scanned barcode contains a specific string. On selection, enter the text pattern to match.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Regex Match</strong></td>
+<td style="text-align: left;">Matches if the scanned barcode fits the provided regular expression. On selection, enter a regular expression in the <code>regex</code> field.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> All text entries are case-sensitive. </p>
+</blockquote>
+<ul>
+<li><strong>Reject Barcode toggle:</strong> When enabled, the system rejects the matching scanned barcode and displays an error during scanning. Enable this toggle to block invalid barcodes. </li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Either <strong>Sequence Nbr</strong> or <strong>Match Function</strong> is mandatory for each barcode preprocessing rule. You can also configure both fields simultaneously. </p>
+</blockquote>
+</li>
+<li>
+<p>Click <strong>Save</strong>. </p>
+</li>
+</ol>
+<p>You can create multiple rules with different sequence numbers.</p>
+<p>The system matches the scanned barcodes against barcode preprocessing rules in sequence. Once the scanned barcode matches a rule, any associated update logic is executed and no further rules are evaluated. </p>
+<p>Barcode Preprocessing Update rules for a matching sequence define how the barcode is to be updated or handled next. </p>
+<hr />
+<h2 id="configure-barcode-preprocessing-updates">Configure Barcode Preprocessing Updates</h2>
+<p>In the <strong>Barcode Preprocessing Updates</strong> screen, you can configure the actual logic used to transform the scanned barcodes. </p>
+<p>To define how a matched barcode should be updated: </p>
+<ol>
+<li>In the Barcode Preprocessing UI, select an existing barcode preprocessing rule. </li>
+<li>Click <strong>More Actions</strong> &gt; <strong>Barcode Preprocessing Updates</strong>. </li>
+<li>Click <strong>Create</strong>. </li>
+<li>
+<p>On the Create form, enter or select the following fields:</p>
+<ul>
+<li><strong>Sequence Nbr:</strong> Determines the update execution order. </li>
+<li>
+<p><strong>Update Function:</strong> Logic used to transform the scanned barcode. You can select from the following choices: </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Update Function</th>
+<th style="text-align: left;">Behavior</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Substring</strong></td>
+<td style="text-align: left;">Extracts a portion of the barcode. Enter <code>startindex</code> (inclusive) and <code>endindex</code> (exclusive) values.<br><br><em>Note: Index value starts with 0. If the provided end index is greater than the last index, the system captures up to the final character.</em></td>
+<td style="text-align: left;"><strong>Scanned Barcode:</strong> <code>ARTSKU1234567</code><br><strong>Startindex:</strong> 3<br><strong>Endindex:</strong> 9<br><strong>Result:</strong> <code>SKU123</code> (from 3rd to 8th character)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Strip String</strong></td>
+<td style="text-align: left;">Removes all occurrences of a specified string. Enter the exact string value to remove.</td>
+<td style="text-align: left;"><strong>Scanned Barcode:</strong> <code>ARTSSKUARTS123</code><br><strong>Strip String:</strong> <code>ARTS</code><br><strong>Result:</strong> <code>SKU123</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Strip Regex</strong></td>
+<td style="text-align: left;">Removes parts of the scanned barcode using regex. Enter a regular expression in the <code>regex</code> field to strip matching portions. Standard regex patterns apply.</td>
+<td style="text-align: left;"><strong>Scanned Barcode:</strong> <code>ARTSKU123456</code><br><strong>Regex:</strong> <code>^(.{3})</code><br><strong>Result:</strong> <code>SKU123456</code> (first three characters removed)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Insert At</strong></td>
+<td style="text-align: left;">Inserts a string at a specified position. Enter the <code>Position</code> (0-indexed) and the <code>String to insert</code>. If the position exceeds the length, it appends to the last character's position.</td>
+<td style="text-align: left;"><strong>Scanned Barcode:</strong> <code>ART12345</code><br><strong>Position:</strong> 3<br><strong>String to insert:</strong> <code>SKU</code><br><strong>Result:</strong> <code>ARTSKU12345</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Regex Replace</strong></td>
+<td style="text-align: left;">Performs advanced transformations using regex groups. Enter a regular expression in the <code>regex</code> field. <em>Useful for constructing multi-field barcodes.</em></td>
+<td style="text-align: left;"><strong>Scanned Barcode:</strong> <code>SSBPLPN2201</code><br><strong>Regex:</strong> <code>^SSBP(.{7})</code><br><strong>String to replace:</strong> <code>SSMFB[A]$1!</code><br><strong>Result:</strong> <code>SSMFB[A]LPN2201!</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Save</strong>. </p>
+</li>
+</ol>
+<p>You can create multiple updates with different sequence numbers. </p>
+<blockquote>
+<p><strong>Execution Behavior:</strong> Barcode Preprocessing Updates execute in strict sequence order. The output of one update function becomes the direct input for the next.</p>
+</blockquote>
+<hr />
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-extract-substring">Example 1: Extract Substring</h3>
+<p>Extract a portion from the scanned barcode. </p>
+<p><strong>Input Barcode:</strong> <code>ARTSSKU1234567</code> </p>
+<h4 id="barcode-preprocessing-rule">Barcode Preprocessing Rule</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Group</th>
+<th style="text-align: left;">Sequence Nbr</th>
+<th style="text-align: left;">Prefix Text</th>
+<th style="text-align: left;">Reject Barcode</th>
+<th style="text-align: left;">Match Function</th>
+<th style="text-align: left;">Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Group1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><code>ART</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;"><code>min_length</code></td>
+<td style="text-align: left;"><code>{"length": 6}</code></td>
+</tr>
+</tbody>
+</table>
+<p>The system matches the scanned barcode <code>ARTSSKU1234567</code> based on the prefix and minimum length rule. </p>
+<h4 id="barcode-preprocessing-update-for-sequence-1">Barcode Preprocessing Update (for Sequence 1)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Match Rule</th>
+<th style="text-align: left;">Sequence Nbr</th>
+<th style="text-align: left;">Update Function</th>
+<th style="text-align: left;">Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Company/Facility/1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><code>substring</code></td>
+<td style="text-align: left;"><code>startindex = 4</code>, <code>endindex = 10</code></td>
+</tr>
+</tbody>
+</table>
+<p>The update rule extracts characters from position 4 to 9. </p>
+<p><strong>Final Output after updates:</strong> <code>SKU123</code> </p>
+<hr />
+<h3 id="example-2-reject-invalid-barcode">Example 2: Reject Invalid Barcode</h3>
+<p>Reject all barcodes starting with "SSITEM". </p>
+<h4 id="barcode-preprocessing-rule_1">Barcode Preprocessing Rule</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Group</th>
+<th style="text-align: left;">Sequence Nbr</th>
+<th style="text-align: left;">Prefix Text</th>
+<th style="text-align: left;">Reject Barcode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Group2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><code>SSITEM</code></td>
+<td style="text-align: left;"><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>If the scanned barcode is <code>SSITEM012XYZ</code>, the system matches the prefix and rejects the barcode immediately, throwing an error.</p>
+<hr />
+<h3 id="example-3-multi-step-processing">Example 3: Multi-Step Processing</h3>
+<p>When a barcode (e.g., <code>SKUSLPN12345</code>) is scanned during a mobile transaction, the system evaluates it against each rule sequentially until a match is found. </p>
+<h4 id="barcode-preprocessing-rules">Barcode Preprocessing Rules</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Group</th>
+<th style="text-align: left;">Sequence Nbr</th>
+<th style="text-align: left;">Prefix Text</th>
+<th style="text-align: left;">Reject Barcode</th>
+<th style="text-align: left;">Match Function</th>
+<th style="text-align: left;">Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Group3</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><code>SKU</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;"><code>min_length</code></td>
+<td style="text-align: left;"><code>{"length": 14}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Group3</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><code>SKU</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;"><code>exact_length</code></td>
+<td style="text-align: left;"><code>{"length": 20}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Group3</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><code>SKU</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;"><code>begins_with</code></td>
+<td style="text-align: left;"><code>{"string": "SKUNR"}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Group3</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><code>SKU</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;"><code>contains</code></td>
+<td style="text-align: left;"><code>{"contains": "SKU-SKU"}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Group3</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><code>SKU</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;"><code>regex_match</code></td>
+<td style="text-align: left;"><code>{"regex": "S.S"}</code></td>
+</tr>
+</tbody>
+</table>
+<p>For the barcode <strong><code>SKUSNLPN12345</code></strong>, the system evaluates the rules from sequence 1 to 5: 
+1. Sequences 1 to 4 do not match this barcode according to their configuration. 
+2. <strong>Sequence 5 matches</strong> this barcode because the regular expression criteria applies (<code>regex_match: {"regex":"S.S"}</code>). </p>
+<p>The system triggers the associated barcode preprocessing update rules for Sequence 5.</p>
+<h4 id="barcode-preprocessing-update-for-sequence-5">Barcode Preprocessing Update (for Sequence 5)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Match Rule</th>
+<th style="text-align: left;">Sequence Nbr</th>
+<th style="text-align: left;">Update Function</th>
+<th style="text-align: left;">Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Company/Facility/5</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><code>strip_string</code></td>
+<td style="text-align: left;"><code>string = SN</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Company/Facility/5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><code>substring</code></td>
+<td style="text-align: left;"><code>startindex = 0</code>, <code>endindex = 8</code></td>
+</tr>
+</tbody>
+</table>
+<p>The barcode updates sequentially: 
+1. <strong>Sequence 1:</strong> Removes all occurrences of "SN", turning the string into <code>SKULPN12345</code>. 
+2. <strong>Sequence 2:</strong> Extracts the first 8 characters from that result (<code>startindex = 0</code> to <code>endindex = 8</code>). </p>
+<ul>
+<li><strong>Input barcode:</strong> <code>SKUSNPLN12345</code></li>
+<li><strong>Final barcode after updates:</strong> <code>SKULPN12</code></li>
+</ul>
+<hr />
+<h3 id="example-4-conditional-extraction-based-on-supplier-prefix">Example 4: Conditional Extraction Based on Supplier Prefix</h3>
+<p>You receive SKUs with multiple supplier barcodes, each featuring a unique prefix and different part number formats: 
+* <strong>Supplier 1:</strong> Barcodes start with prefix "S1-", with the part number immediately following (e.g., <code>S1-123456</code>). 
+* <strong>Supplier 2:</strong> Barcodes start with prefix "S2", with the part number immediately following (e.g., <code>S2123456</code>). </p>
+<p>The system recognizes the supplier based on the prefix and extracts the core part numbers. </p>
+<h4 id="barcode-preprocessing-rules_1">Barcode Preprocessing Rules</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Group</th>
+<th style="text-align: left;">Sequence Nbr</th>
+<th style="text-align: left;">Prefix Text</th>
+<th style="text-align: left;">Reject Barcode</th>
+<th style="text-align: left;">Match Function</th>
+<th style="text-align: left;">Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Group4</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><code>S1-</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;"><code>min_length</code></td>
+<td style="text-align: left;"><code>{"length": 6}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Group4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><code>S2</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;"><code>min_length</code></td>
+<td style="text-align: left;"><code>{"length": 6}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="barcode-preprocessing-update-for-sequence-1_1">Barcode Preprocessing Update (for Sequence 1)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Match Rule</th>
+<th style="text-align: left;">Sequence Nbr</th>
+<th style="text-align: left;">Update Function</th>
+<th style="text-align: left;">Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Company/Facility/1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><code>strip_string</code></td>
+<td style="text-align: left;"><code>string = S1-</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="barcode-preprocessing-update-for-sequence-2">Barcode Preprocessing Update (for Sequence 2)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Match Rule</th>
+<th style="text-align: left;">Sequence Nbr</th>
+<th style="text-align: left;">Update Function</th>
+<th style="text-align: left;">Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Company/Facility/2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><code>strip_string</code></td>
+<td style="text-align: left;"><code>string = S2</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>For Supplier 1 barcode <code>S1-123456</code>:</strong> The rule matches the "S1-" prefix, executes update sequence 1 to strip the "S1-" string, and outputs <strong><code>123456</code></strong>. </li>
+<li><strong>For Supplier 2 barcode <code>S2123456</code>:</strong> The rule matches the "S2" prefix, executes update sequence 1 to strip the "S2" string, and outputs <strong><code>123456</code></strong>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

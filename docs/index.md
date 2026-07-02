@@ -9,7 +9,6 @@ This project demonstrates enterprise-level documentation including:
 - UI Help Documentation
 - REST API Documentation
 - Release Notes
-- Interactive API Explorer
 
 ---
 

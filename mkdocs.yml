@@ -23,5 +23,4 @@ nav:
 markdown_extensions:
   - md_in_html
 
-extra_javascript:
-  - https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js
+

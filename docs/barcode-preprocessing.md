@@ -21,6 +21,7 @@ When a barcode is scanned, the system processes it in the following sequential o
 
 ## Key Capabilities 
 Use barcode preprocessing rules to: 
+
 - Standardize barcode formats across different suppliers. 
 - Extract or restructure specific barcode segments from the scanned input. 
 - Validate barcode inputs in real time.  
